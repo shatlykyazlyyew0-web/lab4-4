@@ -1,10 +1,10 @@
-#include <stdio.h>
+﻿#include <stdio.h>
 
 int main()
 {
     int flag = 1;
     int point = 0;
-    char str[100] = "()()(())";
+    char str[100] = ")()(())";
     // test: "()()(())"  ")())(())" "())("
 
     for (int i = 0; str[i] != '\0'; i++) {
@@ -15,11 +15,11 @@ int main()
             point -= 1;
         }
         if (point < 0) {
-            flag = 0;
-            break;
+            i = 20;
+            printf("%s", "here");
         }
     }
-    if (flag && point == 0) {
+    if (point == 0) {
         printf("Balanced");
     }
     else {
