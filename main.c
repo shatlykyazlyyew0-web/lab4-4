@@ -1,13 +1,8 @@
 ﻿#include <stdio.h>
-
-int main()
+void balance(char str[])
 {
-    // int flag = 1;
     int point = 0;
     int f = 1;
-    char str[100] = ")(()(())";
-    // test: "()()(())"  ")())(())" "())("
-
     for (int i = 0; f && str[i] != '\0'; i++) {
         if (str[i] == '(') {
             point += 1;
@@ -26,5 +21,13 @@ int main()
     else {
         printf("not balanced");
     }
+}
+int main()
+{
+    // int flag = 1;
+    balance("()((()))(");
+    // test: "()()(())"  ")())(())" "())("
+
+
     return 0;
 }
