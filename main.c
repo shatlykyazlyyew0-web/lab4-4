@@ -1,5 +1,5 @@
 ﻿#include <stdio.h>
-void balance(char str[])
+void balance_brackets(char str[])
 {
     int point = 0;
     int f = 1;
@@ -25,7 +25,7 @@ void balance(char str[])
 int main()
 {
     // int flag = 1;
-    balance("()((()))(");
+    balance_brackets("()((()))(");
     // test: "()()(())"  ")())(())" "())("
 
 
