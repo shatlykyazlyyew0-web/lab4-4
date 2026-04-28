@@ -4,7 +4,7 @@ int similar_word(const char *str, int *result_w)
 {
   if(str == NULL || result_w == NULL)
   {
-    printf("%s", "Error!!! Point is NULL.");
+    // printf("%s", "Error!!! Point is NULL.");
     return -1;
   }
   char word[1000];
@@ -40,10 +40,12 @@ int main() {
 
   int result;
 
-  if (similar_word("abcda, aaaa, jfjfd kjkf.", NULL/*&result*/) == 0)
+  if (similar_word("abcda, aaaa, jfjfd kjkf axa.", &result) == 0)
   {
     printf("Result: %d", result);
-  }
+  }else {
+          printf("%s", "Error!!!");
+        }
 
   return 0;
 }
