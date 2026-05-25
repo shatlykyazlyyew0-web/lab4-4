@@ -24,7 +24,6 @@ int balance_brackets(char brackets[])
 {
   if (brackets == NULL)
   {
-    // printf("%s","Error!!!");
     return -1;
   }
 
@@ -45,7 +44,6 @@ int balance_brackets(char brackets[])
         found_brackets = 1;
         if (a < 0)
         {
-          // printf("%s", "Not Balanced");
           return 0;
         }
       }
@@ -54,18 +52,15 @@ int balance_brackets(char brackets[])
 
   if (found_brackets != 1)
   {
-    // printf("%s", "No brackets found in the string!!!");
     return  -1;
   }
 
   if (a == 0)
   {
-    // printf("%s", "All is right, BALANCED!!!");
     return 1;
   }
   else
   {
-    // printf("%s", "Not Balanced!!!");
     return 0;
   }
 
