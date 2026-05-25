@@ -1,5 +1,26 @@
 ﻿#include<stdio.h>
 
+int balance_brackets(char brackets[]);
+
+int main(){
+
+  char brackets[] = "()()()";
+
+  int result = balance_brackets(brackets);
+
+  if(result == 1)
+  {
+    printf("%s", "All is right, Balanced!!!");
+  }
+  else if (result == 0)
+        {
+          printf("%s", "Not Balanced");
+        }else printf ("%s", "Error!!!");
+
+
+  return 0;
+}
+
 int balance_brackets(char brackets[])
 {
   if (brackets == NULL)
@@ -49,23 +70,4 @@ int balance_brackets(char brackets[])
     return 0;
   }
 
-}
-
-int main(){
-
-  char brackets[] = "NULL";
-
-  int result = balance_brackets(brackets);
-
-  if(result == 1)
-  {
-    printf("%s", "All is right, Balanced!!!");
-  }
-  else if (result == 0)
-        {
-          printf("%s", "Not Balanced");
-        }else printf ("%s", "Error!!!");
-
-
-  return 0;
 }
