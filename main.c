@@ -1,11 +1,11 @@
-﻿
+﻿// Задача 2: Выполнить конвертапцию строки в число
+
 #include<stdio.h>
 
 int str_to_number(const char *str, int *out_result)
 {
   if ((str == NULL) || (out_result == NULL))
   {
-    // printf("%s", "Error!!");
     return -1;
   }
 
@@ -28,7 +28,6 @@ int str_to_number(const char *str, int *out_result)
 
   if (str[i] < '0' || str[i] > '9')
   {
-    // printf("%s", "Error, is not digit!!!");
     return -1;
   }
 
@@ -37,10 +36,8 @@ int str_to_number(const char *str, int *out_result)
   {
     if(str[i] < '0' || str[i] > '9')
     {
-      // printf("%s", "It is not digit!!!");
       return -1;
     }
-
     result = result * 10 + (str[i] - '0');
   }
   if (sign == -1)
@@ -59,15 +56,12 @@ int str_to_number(const char *str, int *out_result)
 int main(){
 
   int str;
-  if (str_to_number(" -1123", &str) == 0)
+  if (str_to_number("123", &str) == 0)
   {
     printf("Result: %d", str);
   }else{
          printf("%s", "Error!!!");
        }
-
-
-
 
   return 0;
 }
@@ -75,6 +69,11 @@ int main(){
 
 
 
-
-
-
+// test1: "123"
+// test2: "-456"
+// test3: "   789"
+// test4: "12a3"
+// test5: "999999999999" !!!
+// test6: "2147483647"
+// test7: "2147483648" !!!
+// test8: ""
