@@ -4,7 +4,7 @@ int balance_brackets(char brackets[]);
 
 int main(){
 
-  char brackets[] = "()()()";
+  char brackets[] = "(()";
 
   int result = balance_brackets(brackets);
 
@@ -16,7 +16,6 @@ int main(){
         {
           printf("%s", "Not Balanced");
         }else printf ("%s", "Error!!!");
-
 
   return 0;
 }
@@ -71,3 +70,20 @@ int balance_brackets(char brackets[])
   }
 
 }
+
+
+// // Тест 1: Баланс
+//     "()"
+//     "(())"
+//     "a+(b+c)"
+
+//     // Тест 2: Дисбаланс
+//     "("
+//     ")"
+//     ")("
+//     "(()"
+
+//     // Тест 3: Особые случаи
+//     (NULL)
+//     ("")
+//     ("abc")
