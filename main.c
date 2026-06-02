@@ -11,7 +11,7 @@ int str_to_number(const char *str, int *out_result)
 
   int i = 0;
   int sign = 1;
-  long long result = 0;
+  int result = 0;
   while (str[i] == ' ')
   {
     i++;
@@ -40,25 +40,24 @@ int str_to_number(const char *str, int *out_result)
     }
 
     int digit = str[i] - '0';
+    if (result > 2147483647 / 10)
+    {
+        return -1;
+    }
+
+    if (result == 2147483647 / 10 && digit > 2147483647 % 10) {
+            return -1;
+        }
 
     result = result * 10 + digit;
 
-    if(result > 2147483647)
-    {
-      return -1;
-    }
   }
 
   if (sign == -1)
   {
     result *= -1;
-    // *out_result = result;
-    // return 0;
-    if(result < -2147483648)
-    {
-      return -1;
-    }
     *out_result = result;
+    return 0;
   }
   else if (sign == 1)
        {
@@ -70,7 +69,7 @@ int str_to_number(const char *str, int *out_result)
 int main(){
 
   int str;
-  if (str_to_number("99", &str) == 0)
+  if (str_to_number("99999999999999", &str) == 0)
   {
     printf("Result: %d", str);
   }else{
